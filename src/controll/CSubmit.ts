@@ -2,6 +2,8 @@ import { Request, Response } from "express";
 import { AppDataSource } from "../model/data-source";
 import { Submit } from "../model/MSubmit";
 
+//////////////////////////////
+// GET
 export async function GetSubmits(req: Request, res: Response) {
     const { studyId } = req.params
     const submitRepository = AppDataSource.getRepository(Submit)
@@ -18,6 +20,9 @@ export async function GetSubmits(req: Request, res: Response) {
         console.log(error)
     }
 }
+
+//////////////////////////////
+// POST
 export async function AddSubmitByAssignment(req: Request, res: Response) {
     const { users, assignmentId, studyId } = req.body
 

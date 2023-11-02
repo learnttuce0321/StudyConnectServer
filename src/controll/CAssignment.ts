@@ -2,6 +2,8 @@ import { Request, Response } from "express";
 import { AppDataSource } from "../model/data-source";
 import { Assignment } from "../model/MAssignment";
 
+//////////////////////////////
+// GET
 export async function GetAssignments(req: Request, res: Response) {
     const { studyId } = req.params
     const assignmentRepository = AppDataSource.getRepository(Assignment)
@@ -18,6 +20,9 @@ export async function GetAssignments(req: Request, res: Response) {
         console.log(error)
     }
 }
+
+//////////////////////////////
+// POST
 export async function AddAssignment(req: Request, res: Response) {
     try {
         const tempAssignmentObj = {
@@ -39,6 +44,9 @@ export async function AddAssignment(req: Request, res: Response) {
         console.log(error)
     }
 }
+
+//////////////////////////////
+// DELETE
 export async function DeleteAssignment(req: Request, res: Response) {
     const { id } = req.body
 
@@ -57,6 +65,9 @@ export async function DeleteAssignment(req: Request, res: Response) {
         console.log(error)
     }
 }
+
+//////////////////////////////
+// UPDATE
 export async function ModifyAssignment(req: Request, res: Response) {
     const { id, title, content, deadLine } = req.body
     const assignmentRepository = AppDataSource.getRepository(Assignment)

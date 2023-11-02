@@ -4,6 +4,8 @@ import { AppDataSource } from "../model/data-source";
 import { AttendanceRate } from "../model/MAttendanceRate";
 import { User } from "../model/MUser";
 
+//////////////////////////////
+// GET
 export async function GetAttendanceRates(req: Request, res: Response) {
     const { studyId } = req.params
     const attendnaceRateRepository = AppDataSource.getRepository(AttendanceRate)
@@ -20,6 +22,8 @@ export async function GetAttendanceRates(req: Request, res: Response) {
         console.log(error)
     }
 }
+//////////////////////////////
+// POST
 export async function AddAttendanceRate(req: Request, res: Response) {
     try {
         const tempAttendanceRateObj = {

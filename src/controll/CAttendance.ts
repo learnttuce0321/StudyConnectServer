@@ -1,8 +1,9 @@
 import { Request, Response } from "express";
 import { AppDataSource } from "../model/data-source";
 import { Attendance } from "../model/MAttendance";
-import { ConnectionPoolClosedEvent } from "typeorm";
 
+//////////////////////////////
+// GET
 export async function GetAttendances(req: Request, res: Response) {
     const { studyId } = req.params
     const attendanceRepository = AppDataSource.getRepository(Attendance)
@@ -19,6 +20,9 @@ export async function GetAttendances(req: Request, res: Response) {
         console.log(error)
     }
 }
+
+//////////////////////////////
+// POST
 export async function AddAttendanceBySchedule(req: Request, res: Response) {
     const { users, scheduleId, studyId } = req.body
 

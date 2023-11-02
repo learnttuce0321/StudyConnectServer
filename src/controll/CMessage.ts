@@ -2,6 +2,8 @@ import { Request, Response } from "express";
 import { AppDataSource } from "../model/data-source";
 import { Message } from "../model/MMessage";
 
+//////////////////////////////
+// GET
 export async function GetMessages(req: Request, res: Response) {
     const { studyId } = req.params
     const messageRepository = AppDataSource.getRepository(Message)
@@ -18,6 +20,9 @@ export async function GetMessages(req: Request, res: Response) {
         console.log(error)
     }
 }
+
+//////////////////////////////
+// POST
 export async function AddMessage(req: Request, res: Response) {
     try {
         const tempMessageObj = {

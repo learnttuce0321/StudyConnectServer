@@ -2,6 +2,8 @@ import { Request, Response } from "express";
 import { AppDataSource } from "../model/data-source";
 import { User } from "../model/MUser";
 
+//////////////////////////////
+// GET
 export async function GetUsers(req: Request, res: Response) {
     const { studyId } = req.params
     const userRepository = AppDataSource.getRepository(User)
@@ -19,6 +21,9 @@ export async function GetUsers(req: Request, res: Response) {
         console.log(error)   
     }
 }
+
+//////////////////////////////
+// POST
 export async function AddUser(req: Request, res: Response) {
     try {
         await AppDataSource.createQueryBuilder()
@@ -36,6 +41,9 @@ export async function AddUser(req: Request, res: Response) {
         console.log(error)
     }
 }
+
+//////////////////////////////
+// UPDATE
 export async function ModifyUserInfo(req: Request, res: Response) {
     const { id, info } = req.body
     const userRepository = AppDataSource.getRepository(User)

@@ -4,6 +4,8 @@ import { Submit } from "../model/MSubmit";
 import { SubmitRate } from "../model/MSubmitRate";
 import { User } from "../model/MUser";
 
+//////////////////////////////
+// GET
 export async function GetSubmitRates(req: Request, res: Response) {
     const { studyId } = req.params
     const submitRateRepository = AppDataSource.getRepository(SubmitRate)
@@ -20,6 +22,9 @@ export async function GetSubmitRates(req: Request, res: Response) {
         console.log(error)
     }
 }
+
+//////////////////////////////
+// POST
 export async function AddSubmitRate(req: Request, res: Response) {
     try {
         const tempSubmitRateObj = {

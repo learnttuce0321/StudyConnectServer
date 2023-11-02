@@ -2,6 +2,8 @@ import { Request, Response } from "express";
 import { AppDataSource } from "../model/data-source";
 import { Schedule } from "../model/MSchedule";
 
+//////////////////////////////
+// GET
 export async function GetSchedules(req: Request, res: Response) {
     const { studyId } = req.params
     const scheduleRepository = AppDataSource.getRepository(Schedule)
@@ -18,6 +20,9 @@ export async function GetSchedules(req: Request, res: Response) {
         console.log(error)
     }
 }
+
+//////////////////////////////
+// POST
 export async function AddSchedule(req: Request, res: Response) {
     try {
         const tempScheduleObj = {
@@ -39,6 +44,9 @@ export async function AddSchedule(req: Request, res: Response) {
         console.log(error)
     }
 }
+
+//////////////////////////////
+// DELETE
 export async function DeleteSchedule(req: Request, res: Response) {
     const { id } = req.body
 
@@ -57,6 +65,9 @@ export async function DeleteSchedule(req: Request, res: Response) {
         console.log(error)
     }
 }
+
+//////////////////////////////
+// UPDATE
 export async function ModifySchedule(req: Request, res: Response) {
     const { id, name, date, location, time } = req.body
     const scheduleRepository = AppDataSource.getRepository(Schedule)

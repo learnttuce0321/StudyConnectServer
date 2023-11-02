@@ -99,6 +99,8 @@ const submitRepository = AppDataSource.getRepository(Submit);
 const attendanceRateRepository = AppDataSource.getRepository(AttendanceRate)
 const submitRateRepository = AppDataSource.getRepository(SubmitRate)
 
+//////////////////////////////
+// GET
 export async function GetStudyData(req:Request, res: Response) {
     const { studyId } = req.params
 
