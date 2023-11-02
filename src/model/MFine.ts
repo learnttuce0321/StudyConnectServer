@@ -1,6 +1,6 @@
 import { Column, CreateDateColumn, Entity, ManyToOne, PrimaryColumn } from "typeorm";
-import { User } from "./MUser";
 import { Study } from "./MStudy";
+import { User } from "./MUser";
 
 @Entity()
 export class Fine {
@@ -18,7 +18,6 @@ export class Fine {
 
     @CreateDateColumn({name: 'created_at'})
     created_at: Date;
-
 
     @ManyToOne(() => User, user => user.fines, {onDelete: 'CASCADE', onUpdate: 'CASCADE'})
     user: User

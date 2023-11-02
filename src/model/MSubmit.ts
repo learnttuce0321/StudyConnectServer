@@ -1,7 +1,7 @@
 import { Column, CreateDateColumn, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Study } from "./MStudy";
 import { User } from "./MUser";
 import { Assignment } from "./MAssignment";
-import { Study } from "./MStudy";
 
 @Entity()
 export class Submit {
@@ -13,7 +13,6 @@ export class Submit {
 
     @CreateDateColumn({name: 'created_at'})
     created_at: Date;
-
 
     @ManyToOne(() => User, user => user.submits, {onDelete: 'CASCADE', onUpdate: 'CASCADE'})
     user: User;

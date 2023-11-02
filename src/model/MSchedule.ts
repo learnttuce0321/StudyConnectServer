@@ -1,6 +1,6 @@
-import { Column, CreateDateColumn, Entity, ManyToOne, OneToMany, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
-import { Attendance } from "./MAttendance";
+import { Column, CreateDateColumn, Entity, ManyToOne, OneToMany, PrimaryColumn } from "typeorm";
 import { Study } from "./MStudy";
+import { Attendance } from "./MAttendance";
 
 @Entity()
 export class Schedule {
@@ -21,7 +21,6 @@ export class Schedule {
     
     @CreateDateColumn({name: 'created_at'})
     created_at: Date;
-
 
     @OneToMany(() => Attendance, attendace => attendace.schedule, {cascade: true})
     attendances: Array<Attendance>;

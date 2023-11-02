@@ -1,7 +1,7 @@
 import { Column, CreateDateColumn, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Study } from "./MStudy";
 import { Schedule } from "./MSchedule";
 import { User } from "./MUser";
-import { Study } from "./MStudy";
 
 @Entity()
 export class Attendance {

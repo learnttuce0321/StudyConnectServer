@@ -30,7 +30,6 @@ export class User {
     @CreateDateColumn({name: 'created_at'})
     created_at: Date
 
-
     @OneToOne(() => SubmitRate, submitRate => submitRate.user, {cascade: true})
     submitRate: SubmitRate;
 
@@ -48,7 +47,6 @@ export class User {
 
     @OneToMany(() => Message, message => message.user, {cascade: true})
     messages: Array<Message>;
-
 
     @ManyToOne(() => Study, study => study.users, {onDelete: 'CASCADE', onUpdate: 'CASCADE'})
     study: Study

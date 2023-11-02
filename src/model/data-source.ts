@@ -20,7 +20,6 @@ export const AppDataSource = new DataSource({
     password: info.password,
     database: info.database,
     entities: [Assignment, Attendance, AttendanceRate, Fine, Message, Schedule, Study, Submit, SubmitRate, User],
-    // Assignment, Attendance, AttendanceRate, Fine, Message, Schedule, Study, Submit, SubmitRate, User
     synchronize: true,
     logging: true,
     migrations: [],

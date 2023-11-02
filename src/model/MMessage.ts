@@ -1,6 +1,6 @@
-import { Column, CreateDateColumn, Entity, ManyToOne, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
-import { User } from "./MUser";
+import { Column, CreateDateColumn, Entity, ManyToOne, PrimaryColumn } from "typeorm";
 import { Study } from "./MStudy";
+import { User } from "./MUser";
 
 @Entity()
 export class Message {
@@ -18,7 +18,6 @@ export class Message {
 
     @CreateDateColumn({name: 'created_at'})
     created_at: Date;
-
 
     @ManyToOne(() => User, user => user.messages, {onDelete: 'CASCADE', onUpdate: 'CASCADE'})
     user: User;

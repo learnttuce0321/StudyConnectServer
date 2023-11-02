@@ -1,4 +1,4 @@
-import { Column, CreateDateColumn, Entity, OneToMany, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm"
+import { Column, CreateDateColumn, Entity, OneToMany, PrimaryColumn } from "typeorm"
 import { Assignment } from "./MAssignment";
 import { Attendance } from "./MAttendance";
 import { AttendanceRate } from "./MAttendanceRate";
@@ -19,7 +19,6 @@ export class Study {
 
     @CreateDateColumn({name: 'created_at'})
     created_at: Date;
-
 
     @OneToMany(() => Assignment, assignment => assignment.study, {cascade: true})
     assignments: Array<Assignment>;
