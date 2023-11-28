@@ -14,11 +14,11 @@ import { info } from '../config/config';
 
 export const AppDataSource = new DataSource({
     type: 'mysql',
-    host: info.host,
-    port: info.port,
-    username: info.username,
-    password: info.password,
-    database: info.database,
+    host: '127.0.0.1',
+    port: 3306,
+    username: 'root',
+    password: 'Jutee0415!',
+    database: 'studyuser',
     entities: [
         Assignment,
         Attendance,
