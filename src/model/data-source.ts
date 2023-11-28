@@ -10,7 +10,7 @@ import { Schedule } from "./MSchedule";
 import { Study } from "./MStudy";
 import { Submit } from "./MSubmit";
 import { SubmitRate } from "./MSubmitRate";
-import { info } from "../config/config";
+import { info } from "src/config/config";
 
 export const AppDataSource = new DataSource({
     type: "mysql",
